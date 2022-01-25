@@ -1,0 +1,17 @@
+{
+  "name": "cucumber-sel-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "cucumber-js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@cucumber/cucumber": "^8.0.0-rc.2",
+    "selenium-webdriver": "^4.1.1"
+  }
+}
