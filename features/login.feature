@@ -14,6 +14,7 @@ Feature: Login to the application
          | saurabh            |
       Then he should have access to the application
       
+      
  Scenario: Login with correct credentials
       Given Saurabh is a writer
       When Saurabh uses his credentials as map
@@ -27,3 +28,17 @@ Scenario: Login with correct credentials
         | username               | password    | name    |
         | saurabh@nobleprog.com  | saurabh     | saurabh |
       Then he should have access to the application
+
+@Sanity
+Scenario Outline: Login with correct credentials
+      Given Saurabh is a writer
+      When Saurabh uses his credentials as multiple map
+        | username | password    | name    |
+        | <email>  | <password>     | <name> |
+      Then he should have access to the application
+
+      Examples:
+
+      | email                  | password   | name |
+      | saurabh@nobleprog.com  | saurabh     | saurabh |
+      | saurabh@nobleprog.com  | admin       | saurabh |

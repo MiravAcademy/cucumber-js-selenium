@@ -23,7 +23,7 @@ Before(async function (){
 After(async function (){
     console.log("After each scenario");
 
-    await commonDriver.closeBrowser();
+  //  await commonDriver.closeBrowser();
 })
 
 BeforeStep(function (){

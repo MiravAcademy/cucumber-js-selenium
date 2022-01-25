@@ -26,8 +26,25 @@ class ConduitApp {
 
         await driver.findElement(this.passwordTextbox).sendKeys(password)
     
-        await driver.findElement(this.signInLink).click()
+        await driver.findElement(this.submitButton).click()
         return 1;
+    }
+
+    async getTextFromProfileLink(){
+
+        let  profileText;
+
+        await driver.findElement(By.xpath("//a[contains(@href, '/profile')]")).getText().then(function (value){
+
+        console.log(value);
+
+        profileText = value;
+
+
+        })
+
+        return profileText;
+
     }
 
 }

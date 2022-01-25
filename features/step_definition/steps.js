@@ -4,6 +4,8 @@ import { setDefaultTimeout } from "@cucumber/cucumber"
 import { commonDriver } from "../utils/commonDriver.js";
 import { conduitApp } from "../application/conduitApp.js";
 
+import { strict as assert } from "assert";
+
 import {driver} from "./hooks.js"
 
 setDefaultTimeout(60 * 1000);
@@ -78,5 +80,12 @@ When('Saurabh uses his credentials as {string} and {string} to login', async fun
 });
 
 Then('he should have access to the application', async function () {
+
+    await conduitApp.getTextFromProfileLink().then(function (value) {
+
+        console.log(value);
+        
+        assert.equal("saurabhnobleprog", value);
+    })
     
 });
